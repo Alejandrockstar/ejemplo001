@@ -1,15 +1,17 @@
 class Padre
+    def initialize(nombre)
+        @nombre = nombre
+    end
     def say_hello
-        saludo = "Hola desde #{self}"
-        return saludo
+        "Hola  #{@nombre} desde #{self}"
     end
 end
 
 class Hijo < Padre
 end
 
-saluda1 = Padre.new
+saluda1 = Padre.new ("Darth")
 puts saluda1.say_hello
 
-saluda2 = Hijo.new
+saluda2 = Hijo.new ("Anakin")
 puts saluda2.say_hello
