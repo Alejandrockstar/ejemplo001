@@ -1,8 +1,6 @@
 # Métodos De String
 # Alejandro López Vázquez
 
-# string_methods.rb
-
 # Método para convertir una cadena a mayúsculas
 def convertir_a_mayusculas(cadena)
     cadena.upcase
