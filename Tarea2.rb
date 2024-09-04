@@ -1,41 +1,50 @@
 # Esta clase se llama ContadorPalabras y maneja un String de entrada para contar palabras repetidas.
 class ContadorPalabras
-    # Se inicializa la variable de instancia @texto que almacenará el String de entrada.
-    def initialize(texto)
-      @texto = texto
+  # Se inicializa la variable de instancia @texto que almacenará el String de entrada.
+  def initialize(texto)
+    @texto = texto
+  end
+
+  # Este método cuenta las palabras repetidas en el texto utilizando un Hash para almacenar las palabras y su frecuencia.
+  def contar_palabras_repetidas
+    # El método scan con una expresión regular selecciona todas las palabras en el texto.
+    palabras = @texto.scan(/\w+/)
+
+    # Se inicializa un Hash para almacenar la frecuencia de cada palabra.
+    frecuencia = Hash.new(0)
+
+    # Se itera sobre cada palabra para contar su frecuencia.
+    palabras.each do |palabra|
+      frecuencia[palabra.downcase] += 1
     end
-  
-    # Este método cuenta las palabras repetidas en el texto utilizando un Hash para almacenar las palabras y su frecuencia.
-    def contar_palabras_repetidas
-      # El método scan con una expresión regular selecciona todas las palabras en el texto.
-      palabras = @texto.scan(/\w+/)
-  
-      # Se inicializa un Hash para almacenar la frecuencia de cada palabra.
-      frecuencia = Hash.new(0)
-  gir 
-      # Se itera sobre cada palabra para contar su frecuencia.
-      palabras.each do |palabra|
-        frecuencia[palabra.downcase] += 1
-      end
-  
-      # Se devuelve el Hash de frecuencias.
-      frecuencia
-    end
-  
-    # Este método imprime las palabras y sus frecuencias en el formato solicitado.
-    def imprimir_frecuencia
-        # Se obtiene el Hash de frecuencias llamando al método de contar palabras
-        frecuencias = contar_palabras_repetidas
-        puts "Contador de cada vez que se repiten las palabras:"
-        # Se itera sobre cada par de palabra y frecuencia en el Hash.
-        frecuencias.each do |palabra, cuenta|
-          # Se imprime la palabra con su frecuencia
-          puts "#{palabra.capitalize} => #{cuenta}"
-        end
+
+    # Se devuelve el Hash de frecuencias.
+    frecuencia
+  end
+
+  # Este método imprime las palabras y sus frecuencias en el formato solicitado.
+  def imprimir_frecuencia
+    # Se obtiene el Hash de frecuencias llamando al método de contar palabras
+    frecuencias = contar_palabras_repetidas
+    puts "Contador de cada vez que se repiten las palabras:"
+    # Se itera sobre cada par de palabra y frecuencia en el Hash.
+    frecuencias.each do |palabra, cuenta|
+      # Se imprime la palabra con su frecuencia
+      puts "#{palabra.capitalize} => #{cuenta}"
     end
   end
-  
-  # Ejemplo de uso
-  contador = ContadorPalabras.new("Hola hola soy Alejandro")
-  contador.imprimir_frecuencia
-  
+
+  #-------------MODIFICACIONES PARA LA TAREA 3-------------------------------------
+    # Este método permite actualizar el valor de la variable de instancia @texto.
+  def actualizar_texto(nuevo_texto)
+    @texto = nuevo_texto
+  end
+end
+
+# Ejemplo de uso - Tarea 2
+contador = ContadorPalabras.new("Hola hola soy Alejandro")
+contador.imprimir_frecuencia
+
+# Se actualiza el texto en la instancia del objeto - Tarea 3
+contador.actualizar_texto("Hola hola nuevamente este es un texto actualizado")
+contador.imprimir_frecuencia
