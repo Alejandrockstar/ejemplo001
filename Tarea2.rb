@@ -33,6 +33,7 @@ class ContadorPalabras
     end
   end
 
+<<<<<<< HEAD
   #-------------MODIFICACIONES DE LA TAREA 3-----------------------------------
   # Este método permite actualizar el valor de la variable de instancia @texto.
   def actualizar_texto(nuevo_texto)
@@ -48,10 +49,21 @@ end
 
 # Ejemplo de uso - Tarea 2
 puts "-------------TAREA 2--------------------"
+=======
+  #-------------MODIFICACIONES PARA LA TAREA 3-------------------------------------
+    # Este método permite actualizar el valor de la variable de instancia @texto.
+  def actualizar_texto(nuevo_texto)
+    @texto = nuevo_texto
+  end
+end
+
+# Ejemplo de uso - Tarea 2
+>>>>>>> 2afcbed7dc42a55b69b6cb005c8105381362bda4
 contador = ContadorPalabras.new("Hola hola soy Alejandro")
 contador.imprimir_frecuencia
 
 # Se actualiza el texto en la instancia del objeto - Tarea 3
+<<<<<<< HEAD
 puts "-------------TAREA 3--------------------"
 contador.actualizar_texto("Hola hola nuevamente este es un texto actualizado")
 contador.imprimir_frecuencia
@@ -59,3 +71,7 @@ contador.imprimir_frecuencia
 # Se muestra el nombre del objeto usando la sobrecarga del método to_s - Tarea 4
 puts "-------------TAREA 4--------------------"
 puts contador  
+=======
+contador.actualizar_texto("Hola hola nuevamente este es un texto actualizado")
+contador.imprimir_frecuencia
+>>>>>>> 2afcbed7dc42a55b69b6cb005c8105381362bda4
